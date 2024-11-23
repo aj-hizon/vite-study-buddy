@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "nunito", sans-serif;
+    background-color: #030229; 
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 8rem;
+    height: 8rem;
+    z-index: 3;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1; 
+}
+
+
+/* Slide 1 */
+
+.slides {
+    position: relative;
+    width: 100%; 
+    text-align: center;
+}
+
+.slides h1 {
+    position: absolute;
+    text-align: left;
+    top: 40%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+    z-index: 3;
+    font-weight: 300;
+}
+
+.slides p {
+    position: absolute;
+    text-align: left;
+    top: 45%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0);
+    z-index: 3;
+    font-size: 1.5rem;
+}
+
+
+.image1 {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    max-width: 100%;
+}
+
+.image2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+}
+
+
+.cta-button {
+    position: absolute;
+    top: 10%;
+    left: 85%; 
+    transform: translate(-50%, 0); 
+    padding:7px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+    color: #030229;
+    font-weight: bold;
+    font-family: "nunito", sans-serif;
+}
+
+.cta-button:hover {
+    background-color: rgb(213, 182, 123);
+}
+
+/* Slide 2 */
+
+.slide2 {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center; 
+    color: white;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1px; 
+    margin-top: -200px;
+}
+
+
+.slide2 h1 {
+    font-size: 3rem;
+    margin: 0;
+    margin-top: -40px;
+    font-weight: 300;
+}
+
+.slide2 p {
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 600px; 
+    max-width: 100%;
+    font-weight: 100;
+}
+
+.image-icon {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin-top: 0; 
+    padding-top: 0; 
+}
+
+
+.button-2 {
+    position: absolute;
+    bottom: 22%; 
+    left: 50%; 
+    transform: translate(-50%, 0); 
+    padding: 0.9rem 3rem;
+    background-color: #555296;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 3;
+    font-family: "nunito", sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.button-2:hover {
+    background-color: #5a4fd6;
+}
+
+/* Slide 3 */
+
+.slide3 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+
+.overlay2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#03022999; 
+    z-index: 1;
+}
+
+
+.image3 {
+    width: 100%;
+    height: auto;
+    z-index: 0; 
+}
+
+.slide3-icon, .slide3-icon2, .slide3-icon3 {
+    position: absolute;
+    top: 10%; 
+    right: 5%;
+    width: 80px; 
+    height: auto;
+    z-index: 2; 
+}
+
+.slide3-icon {
+    top: 30%;
+    right: 21%;
+}
+
+.slide3-icon2 {
+    top: 53%;
+    right: 21%;
+}
+
+.slide3-icon3 {
+    width: 200px;
+    top: 30%;
+    right: 22.5%;
+}
+
+.text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 25%; 
+    transform: translateY(-50%);
+    z-index: 2; 
+    color: white;
+    max-width: 600px; 
+    text-align: left; 
+}
+
+
+.text-wrapper h1 {
+    font-size: 3rem; 
+    font-family: "nunito", sans-serif;
+    margin-bottom: 2.4rem; 
+    font-weight: 300;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+}
+
+
+.text-wrapper p {
+    font-size: 1.2rem;
+    font-family: "nunito", sans-serif;
+    line-height: 1.5;
+    margin-bottom: 50px; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+    font-weight: 200;
+}
+
+/* Slide 4 */
+
+.slide4{
+
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center; 
+    color: white;
+    
+}
+
+.slide4-wrapper{
+    position: absolute;
+    top: 250px;
+    left: 25%; 
+    transform: translateY(-50%);
+    color: white;
+    max-width: 500px; 
+    text-align: left; 
+}
+
+.slide4-wrapper h1 {
+    font-size: 3rem; 
+    font-family: "nunito", sans-serif;
+    margin-bottom: 2.4rem; 
+    font-weight: 300;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+}
+
+.slide4-wrapper p {
+    font-size: 1.3rem;
+    font-family: "nunito", sans-serif;
+    line-height: 1.5;
+    text-align: left;
+    
+}
+.image4 {
+    position: absolute;
+    margin-top: 100px;
+    right: 10%;
+    padding-bottom: 100px;
+}
+
+.arrow {
+    position: absolute;
+    width: 10%;
+    margin-top: 410px;
+    left: 70%;
+}
+
+
+/* Slide 5 */
+.slide5 {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.slide5-wrapper {
+    position: absolute;
+    top: 250px;
+    left: 25%; 
+    transform: translateY(-50%);
+    max-width: 550px; 
+    text-align: left;
+}
+
+.slide5-wrapper h3 {
+    font-size: 1.2rem; 
+    font-family: "nunito", sans-serif;
+    margin-top: -10px; 
+    color: #4d81ea;
+}
+
+ul {
+    margin-top: 30px;
+}
+
+ul li {
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    list-style: none;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+ul li strong {
+    margin-right: 5px; 
+}
+
+ul li a {
+    text-decoration: none;
+    color: #4d81ea;
+    margin-left: 5px;
+    flex: 1; 
+}
+
+ul li img {
+    width: 40px; 
+    margin-left: 10px;
+}
+
+.slide5-credit {
+    position: absolute;
+    bottom: 30px; 
+    left: 60px; 
+    font-size: 1rem; 
+    font-family: "nunito", sans-serif; 
+    font-weight: bold;
+   
+}
+
+
+/* Responsive Design */
+@media (max-width: 1080px) {
+    
+    .slides h1 {
+        font-size: 1.2rem;
+        left: 25%;
+    }
+
+    .logo {
+        width: 10%;
+        height: 20%;
+        
+    }
+    .slides p {
+        font-size: 0.9rem;
+        left: 62%;
+        
+    }
+    .cta-button {
+        font-size: .7rem;
+        padding: 8px 12px;
+        
+    }
+
+    /* Slide 2 */
+
+    .image-icon{
+        width: 15%;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+    .slide2 h2{
+        font-size: 3rem;
+    }
+
+    .slide2 p {
+        font-size: 0,5rem;
+    }
+
+    .button-2{
+        font-size: .7rem;
+    }
+
+    /* Slide 3*/
+
+    .text-wrapper {
+        left: 25%;
+        top: 50%;
+    }
+
+    .text-wrapper h2 {
+        font-size: 2rem;
+    }
+
+    .text-wrapper p {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+        max-width: 360px;
+    }
+
+    .slide3-icon{
+        width: 5%;
+    }
+
+    .slide3-icon2{
+        width: 5%;
+    }
+
+    .slide3-icon3{
+        width: 10%;
+        top: 32%;
+        left: 66%;
+    }
+
+
+    /* Slide 4 */
+
+    .image4{
+        width: 30%;
+    }
+
+    .slide4-wrapper {
+        left: 25%;
+        top: 50%;
+        max-width: 300px;
+    }
+
+    .slide4-wrapper h2 {
+        font-size: 2rem;
+    }
+
+    .slide4-wrapper p {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+        max-width: 360px;
+    }
+
+
+    /* Slide 5 */
+    .slide5-wrapper{
+        left: 25%;
+        top: 50%;
+    }
+
+    .slide5-wrapper h3 {
+        font-size: 1rem;
+    }
+
+    ul li {
+        font-size: 0.8rem;
+    }
+
+    .slide5-credit{
+        font-size: 0.6rem;
+    }
+}
+
+
+

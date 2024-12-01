@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #030229;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+}
+
+/* Responsive Blobs */
+.upper-left, .lower-right {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Upper Left Blob */
+.upper-left {
+    top: 0%;    /* Adjust the distance from the top */
+    left: 0%;   /* Adjust the distance from the left */
+}
+
+/* Lower Right Blob */
+.lower-right {
+    bottom: 0%; /* Adjust the distance from the bottom */
+    right: 0%;  /* Adjust the distance from the right */
+}
+
+/* Title outside the container, centered at the top */
+.profile-header {
+    margin-bottom: 20px; /* Space between title and form container */
+    text-align: center; /* Center the title */
+}
+
+.sub-header {
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 28px;
+    color: #ffffff;
+}
+
+/* Form Container */
+.container {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 90%; /* Make width responsive */
+    max-width: 850px; /* Set max width */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form Styling */
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr; /* One column by default */
+    grid-gap: 20px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #121481;
+}
+
+.form-input input,
+.form-input select {
+    padding: 12px;
+    background: #F7F7F7;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #121481;
+    outline: none;
+}
+
+/* Responsive Custom Select */
+.custom-select {
+    width: 100%;
+    background: #F7F7F7;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    padding: 7px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+/* Selected Item */
+.selected {
+    font-family: Nunito;
+    font-size: 14px;
+    color: #121481;
+    padding: 10px;
+}
+
+/* Options Container */
+.options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Option Items */
+.option {
+    padding: 8px;
+    font-size: 14px;
+    color: #121481;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: #efefef;
+}
+
+.custom-select .options {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Positioned below the selected div */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 10;
+}
+
+/* Show options when clicked */
+.custom-select.open .options {
+    display: block;
+}
+
+/* Hide options when clicked outside */
+body {
+    font-family: Nunito;
+}
+
+
+.form-input input,
+.form-input select {
+    font-family: Nunito;
+    padding: 15px;
+    background: #F7F7F7;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #121481;
+    outline: none;  
+}
+
+.form-submit-container {
+    text-align: center; /* Centers the button */
+}
+
+/* Responsive Form Button */
+.submit-btn {
+    font-weight: bold;
+    background-color: #FBB03B;
+    color: #030229;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 50px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.submit-btn:hover {
+    background-color: #da9a33;
+}
+
+/* Custom Subject Interest Container */
+.subject-container {
+    background: #F7F7F7;
+    padding: 15px;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #121481;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.subject-container:hover {
+    background-color: #efefef;
+}
+
+/* Modal Styling */
+.subject-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-options label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.save-btn{
+    font-family: Nunito;
+    font-weight: bold;
+    background-color: #FBB03B;
+    color: #030229;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 50px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 50px;
+    align-self: center;
+}
+
+.cancel-btn {
+    font-family: Nunito;
+    font-weight: bold;
+    background-color: #c1c1c1;
+    color: #030229;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 50px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 50px;
+    align-self: center;
+}
+
+.cancel-btn:hover {
+    background-color: #989898;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Media Queries */
+/* Existing styles remain untouched */
+
+/* Adjust for screens smaller than 700px */
+@media (max-width: 700px) {
+    .container {
+        padding: 15px;
+        width: 95%; /* Responsive width */
+        max-height: 90vh; /* Limit container height */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+
+    form {
+        grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+        grid-gap: 15px; /* Reduce gap */
+    }
+
+    .form-input input,
+    .form-input select {
+        padding: 10px; /* Adjust padding */
+        font-size: 13px; /* Smaller font size */
+    }
+
+    .submit-btn {
+        padding: 10px 40px; /* Adjust button padding */
+        font-size: 14px; /* Smaller button font size */
+    }
+}
+
+/* Adjust for screens smaller than 600px */
+@media (max-width: 599px) {
+    .container {
+        padding: 10px;
+        width: 100%; /* Full width */
+        max-height: 85vh; /* Reduce height further */
+        overflow-y: auto; /* Enable scrolling */
+    }
+
+    form {
+        grid-template-columns: 1fr; /* Single-column layout */
+        grid-gap: 10px; /* Further reduce gap */
+    }
+
+    .form-input input,
+    .form-input select {
+        padding: 8px; /* Smaller padding */
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .submit-btn {
+        padding: 8px 30px; /* Adjust button padding */
+        font-size: 12px; /* Smaller font size */
+    }
+}
+
+/* Keep the original 2-column layout for full-screen */
+@media (min-width: 700px) {
+    form {
+        grid-template-columns: repeat(2, 1fr); /* Maintain 2-column layout */
+        grid-gap: 25px;
+    }
+}

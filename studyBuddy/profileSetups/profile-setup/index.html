@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Setup</title>
+    <link rel="stylesheet" href="../css/profile-setup.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body>
+    <div class="blob upper-left"></div>
+    <div class="blob lower-right"></div>
+
+    <!-- Title outside the container, centered at the top -->
+    <div class="profile-header">
+        <div class="title">Setup Your Profile</div>
+        <p class="sub-header">Complete the following steps to set up your profile and get started!</p>
+    </div>
+
+    <!-- Container for Form below the title -->
+    <div class="container">
+        <form id="profileForm">
+            <div class="form-input">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-input">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-input">
+                <label for="course">Course</label>
+                <select id="course" class="custom-select">
+                    <div class="options">
+                        <option disabled selected>Select your course</option>
+                        <option class="option" value="computer science">Computer Science</option>
+                        <option class="option" value="information technology">Information Technology</option>
+                        <option class="option" value="information systems">Information Systems</option>
+                        <option class="option" value="software engineering">Software Engineering</option>
+                        <option class="option" value="civil engineering">Civil Engineering</option>
+                        <option class="option" value="electrical engineering">Electrical Engineering</option>
+                        <option class="option" value="mechanical engineering">Mechanical Engineering</option>
+                        <option class="option" value="computer engineering">Computer Engineering</option>
+                        <option class="option" value="industrial technology">Industrial Technology</option>
+                        <option class="option" value="business administration">Business Administration</option>
+                        <option class="option" value="arts in communication">Arts in Communication</option>
+                        <option class="option" value="health sciences">Health Sciences</option>
+                        <option class="option" value="architecture">Architecture</option>
+                        <option class="option" value="accountancy">Accountancy</option>
+                        <option class="option" value="natural sciences">Natural Sciences</option>
+                        <option class="option" value="teacher education">Teacher Education</option>
+                        <option class="option" value="hospitality management">Hospitality Management</option>
+                        <option class="option" value="entrepreneurship">Entrepreneurship</option>
+                        <option class="option" value="tourism management">Tourism Management</option>
+                        <option class="option" value="real estate management">Real Estate Management</option>
+                    </div>
+                </select>
+            </div>    
+            <div class="form-input">
+                <label for="yearLevel">Year Level</label>
+                <select id="yearLevel" required>
+                    <option value="" disabled selected>Select your year level</option>
+                    <option value="1st">1st Year</option>
+                    <option value="2nd">2nd Year</option>
+                    <option value="3rd">3rd Year</option>
+                    <option value="4th">4th Year</option>
+                    <option value="5th">5th Year(Architecture, Engineering, Veterinary Medicine, etc.)</option>
+                </select>
+            </div>
+    
+            <div class="form-input">
+                <label for="subjectInterest">Subject Interest</label>
+                <div class="subject-container" id="subjectInterestContainer">
+                    <span>Click to select your interests</span>
+                </div>
+            </div>
+            
+            <div class="form-input">
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </form>
+
+        <!-- Submit button -->
+        <div class="form-submit-container">
+            <button class="submit-btn">Submit</button>
+        </div>
+        
+    </div>
+    
+
+    <!-- Subject Interest Modal -->
+    <div id="subjectModal" class="subject-modal">
+        <div class="modal-content">
+            <h2>Select Your Interests</h2>
+            <div class="modal-options">
+                <label><input name="interests" type="checkbox" value="math"> Mathematics</label>
+                <label><input name="interests" type="checkbox" value="science"> Science</label>
+                <label><input name="interests" type="checkbox" value="tech"> Technology</label>
+                <label><input name="interests" type="checkbox" value="coding"> Programming</label>
+                <label><input name="interests" type="checkbox" value="arts"> Arts & Design</label>
+                <label><input name="interests" type="checkbox" value="literature"> Literature</label>
+                <label><input name="interests" type="checkbox" value="history"> History</label>
+                <label><input name="interests" type="checkbox" value="theater"> Performing Arts</label>
+                <label><input name="interests" type="checkbox" value="business"> Business & Management</label>
+                <label><input name="interests" type="checkbox" value="media"> Media & Communication</label>
+            </div>
+
+        <div class="button-container"> 
+            <button id="saveInterests" class="save-btn">Save</button>
+            <button id="cancelModal" class="cancel-btn">Cancel</button>
+        </div>
+            
+        </div>
+    </div>
+
+    <script src="../js/profile-setup.js" type="module"></script>
+
+    <img src="../assets/profile-setup/blob2.png" alt="Upper Left Blob" class="blob-overlay upper-left">
+    <img src="../assets/profile-setup/blob1.png" alt="Lower Right Blob" class="blob-overlay lower-right">
+</body>
+</html>

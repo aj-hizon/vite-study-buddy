@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Default body styles */
+body {
+    background-color: #030229;
+    background-image: url('../assets/almost-done/gradient-background.png');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for blob overlay */
+.blob-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header styles */
+.AlmostDone-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.header {
+    font-weight: 700;
+    font-size: 28px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.sub-header {
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Main container */
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 850px;
+    height: 450px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    width: 58%;
+}
+
+.profile-photo {
+    border: 2px dashed #ffa726;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7e7e7;
+    position: relative;
+    overflow: hidden;
+    background-image: url('default-profile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.profile-photo:before {
+    content: "+";
+    font-size: 48px;
+    color: #ffa726;
+    position: absolute;
+}
+
+.profile-photo.has-photo:before {
+    content: none;
+}
+
+.ppsubtitle, .bsubtitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+textarea {
+    height: 240px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.confirm-button {
+    font-family: 'Nunito';
+    font-weight: bold;
+    background-color: #FBB03B;
+    color: #030229;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 130px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.confirm-button:hover {
+    background-color: #e69520;
+}
+
+.skip-button {
+    font-family: 'Nunito';
+    font-weight: bold;
+    background-color: #C6C6C6;
+    color: 030229;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 130px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.skip-button:hover {
+    background-color: #979797;
+}
+
+.button-container {
+    align-self: center;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        height: auto; 
+        padding: 15px;
+    }
+
+    .columns {
+        flex-direction: column; 
+    }
+
+    .left-column, .right-column {
+        width: 100%; 
+        align-items: center;
+        padding: 10px; /* Add padding for better spacing */
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        margin-top: 30px;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .sub-header {
+        font-size: 12px;
+    }
+
+    .confirm-button, .skip-button {
+        padding: 12px 100px; 
+        font-size: 14px;
+    }
+
+    .button-container {
+        margin-top: 30px;
+    }
+
+    textarea {
+        width: 100%; 
+        height: 150px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 20px; 
+    }
+
+    .sub-header {
+        font-size: 10px; 
+    }
+
+    .profile-photo {
+        width: 120px; 
+        height: 120px;
+    }
+
+    .confirm-button, .skip-button {
+        padding: 12px 80px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px; 
+    }
+
+    .left-column, .right-column {
+        width: 100%; 
+    }
+
+    textarea {
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .header {
+        font-size: 18px; 
+    }
+
+    .sub-header {
+        font-size: 8px; 
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .confirm-button, .skip-button {
+        padding: 12px 60px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 8px; 
+        width: 100%;
+    }
+
+    .left-column, .right-column {
+        width: 100%; 
+        padding: 5px; 
+    }
+
+    textarea {
+        height: 120px;
+    }
+
+    .ppsubtitle, .bsubtitle {
+        font-size: 12px; 
+    }
+
+    .button-container {
+        margin-top: 20px;
+    }
+}

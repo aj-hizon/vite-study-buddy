@@ -1,7 +1,26 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { collection, getDocs, getFirestore } from "firebase/firestore"; 
+import { getStorage, ref } from "firebase/storage";
+
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  addDoc,
+  setDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBoKK-ie8uEkYYyFMT6DN--sWnljvdBSEU",
@@ -10,14 +29,32 @@ const firebaseConfig = {
   storageBucket: "study-buddy-d334d.firebasestorage.app",
   messagingSenderId: "975726583471",
   appId: "1:975726583471:web:6d2e55db4e60cd27a0be5a",
-  measurementId: "G-LYFPN635HS"
+  measurementId: "G-LYFPN635HS",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
+const storage = getStorage();
 
-export { app, auth, provider, signInWithPopup, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword };
+export {
+  app,
+  auth,
+  provider,
+  signInWithPopup,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  collection,
+  addDoc,
+  db,
+  serverTimestamp,
+  setDoc,
+  doc,
+  ref,
+  storage,
+  getDoc,
+};

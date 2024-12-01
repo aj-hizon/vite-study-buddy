@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almost Done</title>
+    <link rel="stylesheet" href="../css/almost-done.css">
+</head>
+<body>
+    <div class="AlmostDone-header">
+        <div class="header">Almost Done!</div>
+        <p class="sub-header">Complete setting up your account with just a few steps.</p>
+    </div>
+
+    <div class="container">
+        <div class="columns">
+            <div class="left-column">
+                <div class="profile-photo" onclick="triggerFileInput()"></div> <!-- Click triggers file input -->
+                <p class="ppsubtitle">Add Profile Photo (Optional)</p>
+                <!-- Accept only image files (jpg, jpeg, png, gif) -->
+                <input type="file" id="profilePhotoInput" style="display: none;" accept="image/*" onchange="previewPhoto(event)">
+            </div>
+            <div class="right-column">
+                <p class="bsubtitle">Add a Short Bio</p>
+                <textarea id="shortBio" placeholder="Introduce yourself! Mention your academic interests, what kind of study buddy you’re looking for, or your goals for this semester." required minlength="10"></textarea>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="skip-button" onclick="skipSetup()">Skip</button>
+            <button class="confirm-button" onclick="confirmSetup()">Confirm</button>
+        </div>
+    </div>
+
+
+    <script src="../js/almost-done.js" type="module"></script>
+</body>
+</html>

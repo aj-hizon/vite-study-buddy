@@ -7,93 +7,99 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/landing.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Study Buddy - Connect, Collaborate, Learn</title>
   </head>
-  <body>
-    <div class="flex justify-center">
-        <div class="container">
-            <div class="slides">
-                <div class="overlay"></div>
-                    <a id="btn-get-started" href="./auth/signup.html" class="cta-button">Get Started</a>
-                <img class="image1" src="./public/ImglandingPage/fp.png" alt="Main Image">
-                <img class="image2" src="./public/ImglandingPage/bg fp.png" alt="Background Image">
-                <h1 class="">Kickstart<br> Your College<br> Synergy!</h1>
-                <p class="text-base font-thin leading-10">
-                    Join the study wave. Discover study <br>partners, group sessions and step into the realm of<br> real connections.
+  <body class="bg-regular-blue">
+    <div class="relative w-full overflow-hidden">
+        <section class="bg-[url('/public/2imgLandingPage/section1-bg.png')] bg-no-repeat relative overflow-hidden max-h-[46rem]">
+            <header class="flex flex-col justify-between pt-10 items-center gap-y-[5rem] md:flex-row md:px-20">
+                <div class="flex flex-row items-center justify-center cursor-default -translate-x-4">
+                    <img class="w-[4rem] m-auto" src="./public/study-buddy-logo.png" alt="">
+                    <p class="text-white font-semibold text-2xl">Study Buddy</p>
+                </div>
+                <button id="btn-get-started" class="bg-regular-yellow text-regular-blue font-bold px-4 h-[3rem] rounded-[3px] text-xl md:h-[2rem] md:text-base">Get Started</button>
+            </header>
+            <div class="flex flex-col items-center px-6 pb-[13rem] pt-[4rem] gap-y-4 gap-x-[3rem] md:px-20 md:flex-row justify-center lg:gap-x-[13rem]">
+                <h1 class="text-white font-semibold text-center text-4xl md:w-[10rem] md:text-left lg:text-5xl">Kickstart Your College Synergy!</h1>
+                <p class="text-white font-thin text-center md:text-left lg:text-xl leading-9 lg:max-w-[25rem] lg:font-thin lg:leading-10">
+                    Join the study wave. Discover study 
+                    partners, group sessions and step into the realm of 
+                    real connections. 
                 </p>
             </div>
-            <div class="slide2">
-                <div class="content-wrapper">
-                    <img class="image-icon" src="./public/ImglandingPage/pen.png" alt="Description of Image" />
-                    <h1>GET STARTED!</h1>
-                    <p>The campus is your oyster. The subjects your pearl. <br> Dive right in. Sign up or learn more about
-                        how you can transform your academic journey.</p>
-                    <a href="" onclick="route()" class="button-2">Join The Study Revolution</a>
-                </div>
+        </section>
+        <img class="w-[30rem] absolute -z-10 -left-[10rem] top-[28rem] opacity-60 md:opacity-100 lg:w-[40rem] lg:top-[20rem]" src="./public/2imgLandingPage/section1-blob-adjusted.png" alt="">
+        <section class="text-white text-center py-24 px-6">
+            <div class="">
+                <img class="w-[5rem] md:-[10rem] m-auto pb-10" src="./public/2imgLandingPage/section2-pencil.png" alt="pencil">
+                <h1 class="font-semibold text-4xl lg:text-5xl lg:font-bold">GET STARTED!</h1>
+                <p class="leading-8 pt-2 pb-12 font-thin lg:text-lg lg:block">The campus is your oyster, the subjects are your pearls.  <span class="hidden h-[0.01rem] md:block"><br></span> Dive right in. Sign up or learn more about how you can transform your academic journey.</p>
+                <button class="bg-button-blue px-8 py-2 rounded-[4px]">Join The Study Revolution</button>
             </div>
-    
-            <div class="slide3">
-                <div class="overlay2"></div>
-                <img class="image3" src="./public/ImglandingPage/pexels-george-pak-7972685 1.png" alt="Image 4">
-                <img class="slide3-icon" src="./public/ImglandingPage/Vector.png" alt="">
-                <img class="slide3-icon2" src="./public/ImglandingPage/Vector.png" alt="">
-                <img class="slide3-icon3" src="./public/ImglandingPage/SVG.png" alt="">
-    
-                <div class="text-wrapper">
-                    <h1>EASY AS 1, 2, 3!</h1>
-                    <p>Set up your profile and spill the beans about your academic pursuits. The more we know, the better
-                        the match!</p>
-                    <p>Swipe till you find your study soulmate. Get cozy with some study goals that resonate with you.</p>
-                    <p>forge meaningful connections as you hit the books. Create your very own study haven right on campus.
-                    </p>
-                </div>
+        </section>
+        <section class="bg-[url('/public/2imgLandingPage/section3-bg.png')] bg-no-repeat text-white text-left px-6 py-16 relative lg:px-[20rem] overflow-hidden">
+            <div class="flex flex-col gap-y-10 max-w-[30rem]">
+                <h1 class="font-semibold text-4xl lg:text-5xl lg:font-bold ">EASY AS 1,2,3!</h1>
+                <p class="font-thin lg:text-lg">Set up your profile and spill the beans about your academic pursuits. The more we know, the better the match!</p>
+                <p class="font-thin lg:text-lg">Swipe till you find your study soulmate. Get cozy with some study goals that resonate with you.</p>
+                <p class="font-thin lg:text-lg">Forge meaningful connections as you hit the books. Create your very own study haven right on campus.</p>
             </div>
-    
-            <div class="slide4">
-                <img class="image4" src="./public/ImglandingPage/pexels-armin-rimoldi-5553075 1.png" alt="">
-                <img class="arrow" src="./public/ImglandingPage/arrowzigzag.png" alt="">
-    
-                <div class="slide4-wrapper">
-                    <h1>EXPERIENCE OUR ZEN FEATURES</h1>
-                    <p>With matching profiles, event creation, real-time chats, and campus locations. we;ve got it all. The
-                        study haven awaits!</p>
+        </section>
+        <img class="absolute -right-[10rem]  -translate-y-[10rem] opacity-60" src="./public/2imgLandingPage/section4-blob.png" alt="">
+        <section class="relative px-6 py-[10rem] lg:px-[20rem]">
+            <div class="flex flex-col gap-y-10 text-white xl:flex-row items-center gap-x-[4rem]">
+                <div class="flex flex-col gap-y-10">
+                    <h1 class="font-semibold text-4xl lg:text-5xl lg:font-bold max-w-[30rem]">EXPERIENCE OUR ZEN FEATURES</h1>
+                    <p class="font-thin lg:text-lg leading-8 max-w-[25rem]">With matching profiles, event creations, real-time chats, and campus locations, we've got it all. The study haven awaits!</p>
                 </div>
-    
+                <img class="" src="./public/2imgLandingPage/section4-bg.png" alt="">
             </div>
-    
-            <div class="slide5">
-                <div class="slide5-wrapper">
-                    <h3>Some Burning Questions, Torched!</h3>
-                    <ul>
-                        <li>
-                            <strong>2024</strong>
-                            <a href="#">How safe is it to meet other students?</a>
-                            <img src="./public/ImglandingPage/arrow.png" alt="Arrow">
-                        </li>
-                        <li>
-                            <strong>2024</strong>
-                            <a href="#">Setting up a study session is a cakewalk</a>
-                            <img src="./public/ImglandingPage/arrow.png" alt="Arrow">
-                        </li>
-                        <li>
-                            <strong>2024</strong>
-                            <a href="#">Want to filter by specific classes or subjects? We got you!</a>
-                            <img src="./public/ImglandingPage/arrow.png" alt="Arrow">
-                        </li>
-                        <li>
-                            <strong>2024</strong>
-                            <a href="#">Want to plan your studies? Use our calendar!</a>
-                            <img src="./public/ImglandingPage/arrow.png" alt="Arrow">
-                        </li>
-                    </ul>
-                </div>
-    
-                <div class="slide5-credit">&copy; Study Buddy, 2024.</div>
-            </div>
-        </div>
+        </section>
+        <section class="bg-white relative px-6 py-[5rem] lg:px-[20rem]">
+            <h1 class="text-text-secondary-blue font-semibold text-xl pb-10">Some burning questions, torched!</h1>
+            <ul class="flex flex-col gap-y-5">
+                <li class="flex flex-row items-center gap-x-5">
+                    <div class="flex flex-row gap-x-5 items-center">
+                        <p class="font-extrabold text-lg">2024</p>
+                        <p class="text-text-secondary-blue font-semibold text-md">How safe is it to meet other student?</p>
+                    </div>
+                    <div class=" bg-gray-300/30 h-[2px] rounded-full grow w-[full]"></div>
+                    <img class="w-[2rem]" src="./public/2imgLandingPage/section5-arrow.svg">
+                </li>
+                <li class="flex flex-row items-center justify-between gap-x-5">
+                    <div class="flex flex-row gap-x-5">
+                        <p class="font-extrabold text-lg">2024</p>
+                        <p class="text-text-secondary-blue font-semibold text-md">Setting up a study session is a cakewalk.</p>
+                    </div>
+                    <div class=" bg-gray-300/30 h-[2px] rounded-full grow w-[full]"></div>
+
+                    <img class="w-[2rem]" src="./public/2imgLandingPage/section5-arrow.svg">
+                </li>
+                <li class="flex flex-row items-center justify-between gap-x-5">
+                    <div class="flex flex-row gap-x-5">
+                        <p class="font-extrabold text-lg">2024</p>
+                        <p class="text-text-secondary-blue font-semibold text-md">Want to filter by specific classes or subjects? We got you!</p>
+                    </div>
+                    <div class=" bg-gray-300/30 h-[2px] rounded-full grow w-[full]"></div>
+                    <img class="w-[2rem]" src="./public/2imgLandingPage/section5-arrow.svg">
+                </li>
+                <li class="flex flex-row items-center justify-between gap-x-5">
+                    <div class="flex flex-row gap-x-5">
+                        <p class="font-extrabold text-lg">2024</p>
+                        <p class="text-text-secondary-blue font-semibold text-md">How safe is it to meet other student?</p>
+                    </div>
+                    <div class=" bg-gray-300/30 h-[2px] rounded-full grow w-[full]"></div>
+                    <img class="w-[2rem]" src="./public/2imgLandingPage/section5-arrow.svg">
+                </li>
+            </ul>
+            <img class="absolute bottom-5 left-5" src="./public/2imgLandingPage/footer-credit.png" alt="">
+        </section>
     </div>
-    <script type="module" src="./scripts/app.js"></script>
-  </body>
+
+    <script src="./scripts/index.js" type="module"></script>
+  </body> 
 </html>
+
+    
+

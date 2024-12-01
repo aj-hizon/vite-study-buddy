@@ -3,7 +3,11 @@ import {
   signInWithPopup,
   provider,
   signInWithEmailAndPassword,
+  GoogleAuthProvider,
 } from "../config/firebase";
+
+import { checkUser } from "./app";
+
 
 // Login
 const loginForm = document.getElementById("login-form");
@@ -15,9 +19,16 @@ loginForm.addEventListener("submit", (e) => {
   const password = loginForm["login-password"].value;
   signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
     const user = userCredential.user;
-    console.log(userCredential);
-  });
+    console.log(user);
+    checkUser();
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage); 
+   })
 });
+
 
 loginGoogleBtn.addEventListener("click", (event) => {
   event.preventDefault();
@@ -30,6 +41,8 @@ loginGoogleBtn.addEventListener("click", (event) => {
       const user = result.user;
       // IdP data available using getAdditionalUserInfo(result)
       // ...
+      console.log(user)
+      checkUser();
     })
     .catch((error) => {
       // Handle Errors here.

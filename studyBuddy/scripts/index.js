@@ -1,27 +1,11 @@
 
-// _______________RETRIEVE DATA FROM FIRESTORE AND INJECT TO HTML________________________
+import { checkUser } from "./app";
 
-// const guideList = document.querySelector('.guides');
+const btnGetStarted = document.getElementById("btn-get-started");
+btnGetStarted.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.href = "../auth/signup.html";
+} )
 
-// Injecting html 
 
-// export function setupGuides(data) {
-//   let html = '';
-//   data.forEach(doc => {
-//     const guide = doc.data();
-//     const li = `
-//      <li class="font-thin bg-white shadow-lg px-10 py-4">
-//       <div class="flex justify-between">
-//         <h1 class="mb-5">${guide.title}</h1>
-//           <p>⬇️</p>
-//       </div>
-//       <p class="text-base">${guide.content}</p>
-//     </li>
-//       `
-//       console.log(guide.content)
-//     html += li;;
-//   });
-
-//   guideList.innerHTML = html;
-// }
-
+// checkUser();

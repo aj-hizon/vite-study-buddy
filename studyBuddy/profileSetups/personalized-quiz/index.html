@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Quiz</title>
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+    <!-- Header outside the container, centered at the top -->
+    <div class="quiz-header">
+        <div class="quiz-title">Personalized Experience</div>
+        <p class="quiz-subtitle">These questions will help us match you with the perfect study buddies</p>
+    </div>
+
+    <!-- Main Quiz Container -->
+    <div class="quiz-container">
+        <div class="question">Question 1/5</div>
+        <div class="progress-bar">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+        <div class="question-text">Study preferences</div>
+
+        <div class="options">
+            <button class="option-btn">Pair</button>
+            <button class="option-btn">Group</button>
+            <button class="option-btn">Alone</button>
+            <button class="option-btn">Mixed</button>
+        </div>
+
+        <div class="button-container">
+            <button class="back-btn">Back</button>
+            <button class="confirm-btn">Confirm</button>
+        </div>
+        
+
+    </div>
+
+    <script src="../js/quiz.js" type="module"></script>
+
+    <img src="../assets/quiz/blob2.png" alt="Upper Right Blob" class="blob-overlay upper-right">
+    <img src="../assets/quiz/blob1.png" alt="Lower Right Blob" class="blob-overlay lower-left">
+
+</body>
+</html>

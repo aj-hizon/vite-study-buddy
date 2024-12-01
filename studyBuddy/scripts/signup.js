@@ -3,7 +3,14 @@ import {
   provider,
   signInWithPopup,
   createUserWithEmailAndPassword,
+  db, 
+  serverTimestamp, 
+  onAuthStateChanged,
+  setDoc, 
+  doc,
 } from "../config/firebase";
+
+import { checkUser } from "./app";
 
 const signupGoogleBtn = document.getElementById("signup-google-btn");
 
@@ -13,12 +20,51 @@ signupForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = signupForm["signup-email"].value;
   const password = signupForm["signup-password"].value;
+  const confirmPassword = signupForm["signup-confirm-password"].value;
+  if (password != confirmPassword){
+    alert("Password does not match!")
+    signupForm.reset(); 
+    return;
+  }
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed up
       const user = userCredential.user;
       alert("Account created Successfuly!");
-      // ...
+
+      console.log(user)
+      
+      onAuthStateChanged(auth, (user) => {
+        if (user){
+            const email = signupForm["signup-email"].value;
+            const password = signupForm["signup-password"].value;
+
+            const userData = {
+                email: email,
+                password: password,
+                doneProfileSetup: false,
+                donePersonalizedQuiz: false,
+                dateAccountCreated: serverTimestamp(),
+                emailDisplayName: user.displayName,
+            }
+            
+            async function addDataAndRedirect(){
+                try {
+                    const docRef = doc(db, 'users', user.uid);
+                    await setDoc(docRef, userData, {merge: true});
+                    window.location.href = "../profileSetups/profile-setup/index.html";
+                } catch (error) {
+                    console.error();
+                    alert("Something went wrong. Please try again.");
+                }
+            }
+
+            addDataAndRedirect();
+        } else {
+            // If user is not logged in, redirect to login page
+            window.location.href = "../../auth/login.html";
+        }
+    })
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -33,20 +79,45 @@ signupGoogleBtn.addEventListener("click", (event) => {
   signInWithPopup(auth, provider)
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
       const user = result.user;
       // IdP data available using getAdditionalUserInfo(result)
       // ...
+      alert("Account created successfully!!") 
+
+      console.log(user);
+      onAuthStateChanged(auth, (user) => {
+        if (user){
+            const email = signupForm["signup-email"].value;
+
+            const userData = {
+                email: user.email,
+                doneProfileSetup: false,
+                donePersonalizedQuiz: false,
+                dateAccountCreated: serverTimestamp(),
+                emailDisplayName: user.displayName,
+                photoUrl: user.photoURL,
+            }
+            
+            async function addDataAndRedirect(){
+                try {
+                    const docRef = doc(db, 'users', user.uid);
+                    await setDoc(docRef, userData, {merge: true});
+                    window.location.href = "../profileSetups/profile-setup/index.html";
+                } catch (error) {
+                    console.error();
+                    alert("Something went wrong. Please try again.");
+                }
+            }
+
+            addDataAndRedirect();
+        } else {
+            // If user is not logged in, redirect to login page
+            // window.location.href = "../../auth/login.html";
+        }
+    })
+      
     })
     .catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // The email of the user's account used.
-      const email = error.customData.email;
-      // The AuthCredential type that was used.
-      const credential = GoogleAuthProvider.credentialFromError(error);
     });
 });
+

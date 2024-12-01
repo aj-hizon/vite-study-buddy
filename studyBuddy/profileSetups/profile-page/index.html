@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image" href="../public/study-buddy-logo.png" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet">
+   <link rel="icon" type="image" href="../../public/study-buddy-logo.png" />
+   <link rel="stylesheet" href="../../styles/style.css">
+   <title>Study Buddy - Home</title>
+</head>
+
+<body class="bg-[#F7F7F8]">
+   <nav class="fixed top-0 z-50 w-full bg-regular-blue   dark:bg-gray-800 dark:border-gray-700">
+      <div class="px-3 py-3 lg:px-5 lg:pl-3">
+         <div class="flex items-center justify-between">
+            <div class="flex items-center justify-start rtl:justify-end">
+               <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+                  type="button"
+                  class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                  <span class="sr-only">Open sidebar</span>
+                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path clip-rule="evenodd" fill-rule="evenodd"
+                        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                     </path>
+                  </svg>
+               </button>
+               <a href="#" class="flex ms-2 md:me-24">
+                  <img src="../../public/study-buddy-logo.png" class="h-[3rem] w-[3rem]" alt="FlowBite Logo" />
+                  <span
+                     class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white text-white">Study
+                     Buddy</span>
+               </a>
+            </div>
+            <div class="flex items-center">
+               <div class="flex items-center ms-3">
+                  <div>
+                     <button type="button"
+                        class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-8 h-8 rounded-full"
+                           src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                     </button>
+                  </div>
+                  <div
+                     class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                     id="dropdown-user">
+                     <div class="px-4 py-3" role="none">
+                        <p id="profile-page-username" class="text-sm text-gray-900 dark:text-white" role="none"></p>
+                        <p id="profile-page-email" class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none"></p>
+                     </div>
+                     <ul class="py-1" role="none">
+                        <li id="btn-signout">
+                           <a href="#"
+                              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                              role="menuitem">Sign out</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <aside id="logo-sidebar"
+      class="fixed top-0 left-0 z-40 w-64 h-screen pt-24 transition-transform -translate-x-full bg-regular-blue sm:translate-x-0 dark:bg-gray-800"
+      aria-label="Sidebar">
+      <img class="absolute left-0 top-10" src="../assets/profile-page/upper-left-blob.png" alt="upper left blob">
+      <div class="h-full px-3 pb-4 overflow-y-auto bg-regular-blue dark:bg-gray-800">
+         <ul class="relative space-y-5 font-medium">
+            <li>
+               <a href="/profileSetups/profile-page/index.html//home data-link"
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
+                  <svg width="24" height="24" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g opacity="0.8">
+                        <path d="M8 17V11H12V17H17V9H20L10 0L0 9H3V17H8Z" fill="white" />
+                     </g>
+                  </svg>
+                  <span class="ms-3">Home</span>
+               </a>
+            </li>
+            <li>
+               <a href="/profileSetups/profile-page/index.html/profile data-link"
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g clip-path="url(#clip0_958_2532)">
+                        <path opacity="0.7"
+                           d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"
+                           fill="white" />
+                     </g>
+                     <defs>
+                        <clipPath id="clip0_958_2532">
+                           <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                     </defs>
+                  </svg>
+                  <span class="ms-3">Profile</span>
+               </a>
+            </li>
+            <li>
+               <a href="/profileSetups/profile-page/index.html/messages data-link"
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g clip-path="url(#clip0_958_2526)">
+                        <path
+                           d="M20 2H4C2.9 2 2.01 2.9 2.01 4L2 22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM18 14H6V12H18V14ZM18 11H6V9H18V11ZM18 8H6V6H18V8Z"
+                           fill="white" />
+                     </g>
+                     <defs>
+                        <clipPath id="clip0_958_2526">
+                           <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                     </defs>
+                  </svg>
+                  <span class="ms-3">Messages</span>
+               </a>
+            </li>
+            <li>
+               <a href="/profileSetups/profile-page/index.html//connections data-link"
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
+                  <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M7.35244 13.7289C11.2732 13.7289 14.7049 15.2414 14.7049 18.5672C14.7049 20.3117 14.0271 21.0938 12.603 21.0938H2.10192C0.669183 21.0938 0 20.3117 0 18.5672C0 15.2414 3.43171 13.7289 7.35244 13.7289ZM14.885 14.7688C14.8164 14.2273 15.1939 13.7375 15.7344 13.6688C16.2835 13.6 17.0728 13.557 17.6476 13.6C21.5511 13.9266 25 15.2414 25 18.5672C25 20.3117 24.3222 21.0938 22.8981 21.0938H17.1585C16.6181 21.0938 16.1805 20.6555 16.1805 20.1141L16.2234 18.6961C16.2406 17.9484 16.129 17.2094 15.8888 16.5133C15.7773 16.1867 15.6057 15.8945 15.4255 15.6023L14.8936 14.7688H14.885ZM17.6476 3.90625C19.9468 3.90625 21.8171 5.77109 21.8171 8.08281C21.8171 10.3945 19.9554 12.2594 17.6476 12.2594C15.3397 12.2594 13.478 10.3945 13.478 8.08281C13.478 5.77109 15.3483 3.90625 17.6476 3.90625ZM7.35244 3.90625C9.65168 3.90625 11.522 5.77109 11.522 8.08281C11.522 10.3945 9.66026 12.2594 7.35244 12.2594C5.04461 12.2594 3.18291 10.3859 3.18291 8.08281C3.18291 5.77969 5.05319 3.90625 7.35244 3.90625Z"
+                        fill="#CDCCD4" />
+                  </svg>
+                  <span class="ms-3">Connections</span>
+               </a>
+            </li>
+            <li>
+               <a href="/profileSetups/profile-page/index.html//settings data-link"
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M17.7645 5.95108L17.3532 5.23725C17.0421 4.69739 16.8866 4.42746 16.622 4.31982C16.3573 4.21218 16.058 4.29712 15.4594 4.46699L14.4425 4.7534C14.0604 4.84153 13.6594 4.79154 13.3104 4.61225L13.0297 4.45027C12.7305 4.25861 12.5003 3.97603 12.3729 3.64387L12.0946 2.81272C11.9116 2.2627 11.8201 1.98769 11.6023 1.83039C11.3845 1.6731 11.0952 1.6731 10.5166 1.6731L9.58759 1.6731C9.00896 1.6731 8.71965 1.6731 8.50183 1.83039C8.28402 1.98769 8.19253 2.2627 8.00955 2.81272L7.73126 3.64387C7.60385 3.97603 7.37369 4.25861 7.07445 4.45027L6.79372 4.61225C6.44476 4.79154 6.0438 4.84153 5.66163 4.7534L4.64477 4.46699C4.04616 4.29712 3.74685 4.21218 3.4822 4.31982C3.21756 4.42746 3.06202 4.69739 2.75094 5.23725L2.33962 5.95108C2.04803 6.45712 1.90223 6.71014 1.93053 6.97949C1.95882 7.24884 2.154 7.4659 2.54436 7.90002L3.40356 8.86061C3.61356 9.12646 3.76265 9.58976 3.76265 10.0063C3.76265 10.4231 3.61361 10.8863 3.40359 11.1522L2.54437 12.1128C2.15401 12.5469 1.95883 12.7639 1.93053 13.0333C1.90223 13.3026 2.04803 13.5557 2.33962 14.0617L2.75093 14.7755C3.062 15.3154 3.21756 15.5853 3.4822 15.693C3.74686 15.8006 4.04617 15.7157 4.64478 15.5458L5.6616 15.2594C6.04384 15.1712 6.44487 15.2212 6.79387 15.4006L7.07456 15.5626C7.37374 15.7542 7.60385 16.0368 7.73123 16.3689L8.00955 17.2001C8.19253 17.7502 8.28402 18.0252 8.50183 18.1825C8.71965 18.3398 9.00896 18.3398 9.58759 18.3398H10.5166C11.0952 18.3398 11.3845 18.3398 11.6023 18.1825C11.8201 18.0252 11.9116 17.7502 12.0946 17.2001L12.3729 16.3689C12.5003 16.0368 12.7304 15.7542 13.0296 15.5626L13.3103 15.4006C13.6593 15.2212 14.0603 15.1712 14.4426 15.2594L15.4594 15.5458C16.058 15.7157 16.3573 15.8006 16.622 15.693C16.8866 15.5853 17.0422 15.3154 17.3532 14.7755L17.3532 14.7755L17.7645 14.0617C18.0561 13.5557 18.2019 13.3026 18.1736 13.0333C18.1453 12.7639 17.9502 12.5469 17.5598 12.1128L16.7006 11.1522C16.4906 10.8863 16.3415 10.4231 16.3415 10.0063C16.3415 9.58976 16.4906 9.12646 16.7006 8.86061L17.5598 7.90002C17.9502 7.4659 18.1453 7.24884 18.1736 6.97949C18.2019 6.71014 18.0561 6.45712 17.7645 5.95108Z"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                     <path
+                        d="M12.9329 9.99992C12.9329 11.6107 11.6271 12.9166 10.0163 12.9166C8.40545 12.9166 7.09961 11.6107 7.09961 9.99992C7.09961 8.38909 8.40545 7.08325 10.0163 7.08325C11.6271 7.08325 12.9329 8.38909 12.9329 9.99992Z"
+                        stroke="white" stroke-width="1.5" />
+                  </svg>
+                  <span class="ms-3">Settings</span>
+               </a>
+            </li>
+
+         </ul>
+      </div>
+   </aside>
+
+   <div class="p-4 sm:ml-64">
+      <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+         <div class="grid grid-cols-3 gap-4 mb-4">
+            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+         </div>
+         <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+            <p class="text-2xl text-gray-400 dark:text-gray-500">
+               <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 18 18">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                     d="M9 1v16M1 9h16" />
+               </svg>
+            </p>
+         </div>
+         <div class="grid grid-cols-2 gap-4 mb-4">
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+         </div>
+         <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+            <p class="text-2xl text-gray-400 dark:text-gray-500">
+               <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 18 18">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                     d="M9 1v16M1 9h16" />
+               </svg>
+            </p>
+         </div>
+         <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+               <p class="text-2xl text-gray-400 dark:text-gray-500">
+                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                     viewBox="0 0 18 18">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 1v16M1 9h16" />
+                  </svg>
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="../js/profile-page.js" type="module"></script>
+</body>
+
+</html>

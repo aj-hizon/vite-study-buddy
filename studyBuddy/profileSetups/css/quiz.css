@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* General Quiz Container Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    background-color: #030229;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Align everything in column */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.upper-right, .lower-left {
+    position: absolute;  /* Positioning blobs relative to the body/container */
+           /* Set appropriate size for the blobs */
+    height: auto;
+    z-index: 0;          /* Set z-index lower than the container to ensure blobs stay behind content */
+    pointer-events: none; /* Prevent interaction with the blobs */
+}
+
+/* Upper Left Blob */
+.upper-right {
+    width: 230px; 
+    top: 74%;    /* Adjust the distance from the top */
+    left: 0%;   /* Adjust the distance from the left */
+}
+
+/* Lower Right Blob */
+.lower-left {
+    width: 230px; 
+    bottom: 75%; /* Adjust the distance from the bottom */
+    right: 0%;  /* Adjust the distance from the right */
+}
+
+/* Title and Subtitle outside container */
+.quiz-header {
+    margin-bottom: 20px; /* Space between the header and the quiz container */
+    text-align: center;
+}
+
+.quiz-title {
+    font-weight: 700;
+    font-size: 28px;
+    color: #FFFFFF; /* White text for visibility */
+}
+
+.quiz-subtitle {
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+/* Adjusted Quiz Container */
+.quiz-container {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 850px;
+    height: 450px; /* Adjusted height */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.progress-step {
+    width: 18%;
+    height: 6px;
+    background-color: #E0E0E0;
+    border-radius: 3px;
+}
+
+.progress-step.active {
+    background-color: #121481;
+}
+
+.question {
+    font-size: 18px;
+    font-weight: 600;
+    color: #121481;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-left: 15px;
+}
+
+.question-text {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-left: 15px;
+    color: #121481;
+}
+
+/* Ensure consistent spacing between the options for all questions */
+.options {
+    display: flex;
+    justify-content: space-evenly; /* Evenly space the options */
+    margin-bottom: 30px; /* Space below the options */
+    width: 100%; /* Ensure the container takes full width */
+    padding: 0 10px; /* Add padding to avoid issues with container overflow */
+}
+
+/* Option button styling */
+.option-btn {
+    font-family: 'Nunito';
+    font-weight: bold;
+    padding: 13px 50px;
+    background: #FFFFFF;
+    border: 2px solid #121481;
+    border-radius: 15px;
+    color: #121481;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
+    margin: 0 10px; /* Add margin to space out the options */
+}
+
+.option-btn:hover {
+    background-color: #121481;
+    color: #FFFFFF;
+}
+
+/* Selected state for the option button */
+.option-btn.selected {
+    background-color: #121481;
+    color: white;
+}
+
+/* Centered Confirm Button */
+.confirm-btn {
+    font-family: Nunito;
+    font-weight: bold;
+    background-color: #FBB03B;
+    color: #030229;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 100px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: 20px; /* Automatically position it at the bottom */
+    align-self: center; /* Center the button horizontally */
+}
+
+.confirm-btn:hover {
+    background-color: #da9a33;
+}
+
+.back-btn {
+    font-family: Nunito;
+    font-weight: bold;
+    background-color: #c1c1c1;
+    color: #030229;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 100px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: auto;
+    margin-bottom: 20px; /* Automatically position it at the bottom */
+    align-self: center; /* Center the button horizontally */
+}
+
+.back-btn:hover {
+    background-color: #989898;
+}
+
+.button-container{
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .quiz-container {
+        width: 90%;
+        height: auto;
+    }
+
+    .question-text {
+        font-size: 18px;
+    }
+
+    .question {
+        font-size: 16px;
+    }
+
+    .progress-step {
+        width: 15%;
+    }
+
+    .option-btn {
+        padding: 12px 40px;
+        font-size: 14px;
+    }
+
+    .confirm-btn, .back-btn {
+        padding: 12px 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .quiz-container {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .quiz-title {
+        font-size: 24px;
+    }
+
+    .quiz-subtitle {
+        font-size: 12px;
+    }
+
+    .question-text {
+        font-size: 16px;
+    }
+
+    .question {
+        font-size: 14px;
+    }
+
+    .option-btn {
+        padding: 10px 30px;
+        font-size: 14px;
+    }
+
+    .confirm-btn, .back-btn {
+        padding: 12px 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .quiz-container {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .quiz-title {
+        font-size: 20px;
+    }
+
+    .quiz-subtitle {
+        font-size: 10px;
+    }
+
+    .question-text {
+        font-size: 14px;
+    }
+
+    .question {
+        font-size: 12px;
+    }
+
+    .option-btn {
+        padding: 8px 25px;
+        font-size: 12px;
+    }
+
+    .confirm-btn, .back-btn {
+        padding: 10px 40px;
+    }
+}

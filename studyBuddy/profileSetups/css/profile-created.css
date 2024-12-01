@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #030229; /* Dark background color */
+    background-image: url('../assets/profile-created/gradient-background.png');
+    background-size: cover; /* Ensure it covers the entire body */
+    background-position: center; /* Center the background image */
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.blob-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the blob image is behind everything else */
+    pointer-events: none; /* Prevent interaction with the image */
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+    /* background-color: rgba(3, 2, 41, 0.8); */ /* Semi-transparent background */
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+    width: 90%;
+    max-width: 850px; /* Prevent container from getting too wide */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.image-section img {
+    max-width: 80%;
+    height: auto;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
+}
+
+button {
+    font-family: 'Nunito';
+    padding: 12px 80px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    min-width: 180px; /* Ensure buttons have a minimum width */
+}
+
+.continue-btn {
+    background-color: #FBB03B; /* Bright yellow button */
+    color: #1C1B3A;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Less padding on small screens */
+        width: 85%;
+    }
+
+    h1 {
+        font-size: 24px; /* Reduce font size for smaller screens */
+    }
+
+    p {
+        font-size: 16px; /* Adjust paragraph font size */
+    }
+
+    .image-section img {
+        max-width: 100%; /* Ensure image is responsive */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px;
+    }
+
+    button {
+        padding: 12px 40px; /* Adjust button size for smaller screens */
+    }
+}
+
+/* Media Query for very small screens (mobile phones) */
+@media (max-width: 480px) {
+    .container {
+        width: 90%; /* Make container width even smaller */
+    }
+
+    h1 {
+        font-size: 20px; /* Further reduce heading font size */
+    }
+
+    p {
+        font-size: 14px; /* Reduce paragraph font size */
+    }
+
+    button {
+        padding: 12px 30px; /* Further reduce button size */
+        font-size: 14px; /* Make font size smaller for buttons */
+    }
+}

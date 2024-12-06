@@ -1,4 +1,6 @@
+import { arrayUnion } from "firebase/firestore";
 import { addDoc, collection, db, serverTimestamp, auth, onAuthStateChanged, setDoc, doc } from "../../config/firebase";
+import { dateFormat } from "../../scripts/app";
 
 
 document.getElementById("profileForm").addEventListener("submit", function(event) {
@@ -74,6 +76,12 @@ submitBtn.addEventListener("click",  (event) => {
 
     onAuthStateChanged(auth, (user) => {
         if (user){
+            const logAction = {
+                action: "edit",
+                date: dateFormat(new Date()),
+                description: "Edited Profile Information"
+              };
+              
             const userData = {
                 userId: user.uid,
                 firstName: firstName,  
@@ -84,13 +92,14 @@ submitBtn.addEventListener("click",  (event) => {
                 interests: selectedInterests,
                 doneProfileSetup: true,
                 donePersonalizedQuiz: false,
+                logHistory: arrayUnion(logAction)
             }
             
             async function addDataAndRedirect(){
                 try {
                     const docRef = doc(db, 'users', user.uid);
                     await setDoc(docRef, userData, {merge: true});
-                    window.location.href = "../splash-screen/index.html";
+                    window.location.href = "../personalized-quiz/index.html";
                 } catch (error) {
                     console.error();
                     alert("Something went wrong. Please try again.");

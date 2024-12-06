@@ -4,18 +4,46 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" type="image" href="../public/study-buddy-logo.png" />
+   <link rel="icon" type="image" href="../../public/study-buddy-logo.png" />
+   
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
       rel="stylesheet">
    <link rel="icon" type="image" href="../../public/study-buddy-logo.png" />
    <link rel="stylesheet" href="../../styles/style.css">
    <title>Study Buddy - Home</title>
+   <style>
+      /* Show the targeted section */
+      .hidden-section {
+        display: none;
+      }
+
+      #profile:target {
+         display: flex;
+      }
+
+      :target {
+        display: block;
+      }
+    </style>
+
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth'
+    });
+    calendar.render();
+  });
+
+</script>
 </head>
 
 <body class="bg-[#F7F7F8]">
-   <nav class="fixed top-0 z-50 w-full bg-regular-blue   dark:bg-gray-800 dark:border-gray-700">
+   <nav class="fixed top-0 z-50 w-full bg-regular-blue  dark:bg-gray-800 dark:border-gray-700">
       <div class="px-3 py-3 lg:px-5 lg:pl-3">
          <div class="flex items-center justify-between">
             <div class="flex items-center justify-start rtl:justify-end">
@@ -30,36 +58,42 @@
                      </path>
                   </svg>
                </button>
-               <a href="#" class="flex ms-2 md:me-24">
-                  <img src="../../public/study-buddy-logo.png" class="h-[3rem] w-[3rem]" alt="FlowBite Logo" />
+               <p  class="flex ms-2 md:me-24">
+                  <img src="../../public/study-buddy-logo.png" class="h-[3rem] w-[3rem]" alt="" />
                   <span
                      class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white text-white">Study
                      Buddy</span>
-               </a>
+               </p>
             </div>
             <div class="flex items-center">
                <div class="flex items-center ms-3">
-                  <div>
+                  <div class="hidden sm:flex gap-x-3 text-right items-center">
+                     <div class=""> 
+                        <p id="profile-page-username" class="text-white text-sm text-nowrap"></p>
+                        <p id="profile-page-email" class="text-xs font-medium text-white truncate" role="none"></p>
+                     </div>
                      <button type="button"
-                        class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                        class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 items-center"
                         aria-expanded="false" data-dropdown-toggle="dropdown-user">
                         <span class="sr-only">Open user menu</span>
                         <img class="w-8 h-8 rounded-full"
                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                        <svg class="w-[1.3rem] h-[1.3rem]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,1)"><path d="M12 16L6 10H18L12 16Z"></path></svg>
                      </button>
                   </div>
                   <div
                      class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
                      id="dropdown-user">
                      <div class="px-4 py-3" role="none">
-                        <p id="profile-page-username" class="text-sm text-gray-900 dark:text-white" role="none"></p>
-                        <p id="profile-page-email" class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none"></p>
+                        <p  class="text-sm text-gray-900 dark:text-white" role="none"></p>
                      </div>
                      <ul class="py-1" role="none">
                         <li id="btn-signout">
                            <a href="#"
                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
-                              role="menuitem">Sign out</a>
+                              role="menuitem">
+                              Sign out
+                           </a>
                         </li>
                      </ul>
                   </div>
@@ -70,13 +104,13 @@
    </nav>
 
    <aside id="logo-sidebar"
-      class="fixed top-0 left-0 z-40 w-64 h-screen pt-24 transition-transform -translate-x-full bg-regular-blue sm:translate-x-0 dark:bg-gray-800"
+      class="fixed top-0 left-0 z-40 w-56 h-screen pt-24 transition-transform -translate-x-full bg-regular-blue sm:translate-x-0 dark:bg-gray-800"
       aria-label="Sidebar">
       <img class="absolute left-0 top-10" src="../assets/profile-page/upper-left-blob.png" alt="upper left blob">
       <div class="h-full px-3 pb-4 overflow-y-auto bg-regular-blue dark:bg-gray-800">
          <ul class="relative space-y-5 font-medium">
             <li>
-               <a href="/profileSetups/profile-page/index.html//home data-link"
+               <a href="#home"
                   class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
                   <svg width="24" height="24" viewBox="0 0 20 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <g opacity="0.8">
@@ -87,7 +121,7 @@
                </a>
             </li>
             <li>
-               <a href="/profileSetups/profile-page/index.html/profile data-link"
+               <a href="#profile"
                   class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <g clip-path="url(#clip0_958_2532)">
@@ -105,7 +139,7 @@
                </a>
             </li>
             <li>
-               <a href="/profileSetups/profile-page/index.html/messages data-link"
+               <a href="#messages"
                   class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <g clip-path="url(#clip0_958_2526)">
@@ -123,7 +157,7 @@
                </a>
             </li>
             <li>
-               <a href="/profileSetups/profile-page/index.html//connections data-link"
+               <a href="#connections"
                   class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
                   <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path
@@ -134,7 +168,7 @@
                </a>
             </li>
             <li>
-               <a href="/profileSetups/profile-page/index.html//settings data-link"
+               <a href="#settings"
                   class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700/40 dark:hover:bg-gray-700 group">
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path
@@ -147,138 +181,455 @@
                   <span class="ms-3">Settings</span>
                </a>
             </li>
-
          </ul>
       </div>
    </aside>
 
-   <div class="p-4 sm:ml-64">
-      <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-         <div class="grid grid-cols-3 gap-4 mb-4">
-            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+   <div class="p-4 sm:ml-56">
+      <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-[3rem]">
+         <section id="home" class="hidden-section">
+            <p>aasdfdas</p>
+            <div class="block">
+               <div id="calendar"></div>
             </div>
-            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+         </section>
+
+         <!-- Profile Page -->
+         <section id="profile" class="hidden-section flex-col gap-y-3 md:flex-row gap-x-3 scroll-mt-28">
+            <div class="flex flex-auto flex-col gap-y-3">
+               <div class="flex flex-col gap-y-8 items-center rounded-lg bg-white p-5 md:p-10 md:flex-row md:gap-x-5">
+                  <img class="shrink rounded-full min-w-[4rem] h-auto max-w-[10rem] m-auto" src="../assets/profile-page/sample-pic.jpg" alt="">
+                  <div class="flex-auto text-center text-regular-blue md:text-left">
+                     <p id="profile-page-name" class="text-2xl font-bold">Andre James Hizon</p>
+                     <p id="profile-page-course" class="font-semibold">Computer Science</p>
+                     <p id="profile-page-yearLevel" class="font-semibold">3rd</p>
+                  </div> 
+                  <button id="btn-profile-page-editProfile" class="bg-regular-yellow text-regular-blue font-semibold px-4 py-1 rounded-md text-sm mt-3 hover:bg-regular-yellow/80">Edit Profile</button>
+               </div>
+               <div class="bg-white rounded-lg p-5">
+                  <h1 class="text-regular-blue font-bold text-lg mb-3">Bio</h1>
+                  <p id="profile-page-bio" class="text-sm w-full text-left break-words max-w-[50rem]"></p>
+               </div>
+               <div class="bg-white rounded-lg p-5 w-full">
+                  <h1 class="text-regular-blue font-bold text-lg mb-5">Interests</h1>
+                  <ul id="profile-page-interests" class="flex flex-wrap gap-x-3 gap-y-3 mb-5 w-[40rem]">
+                  </ul>
+               </div>
             </div>
-            <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+            <div class=" bg-white rounded-lg p-5 lg:flex-shrink-0">
+               <h1 class="text-regular-blue font-bold text-lg mb-5">Study Preferences</h1>
+               <div class="flex flex-col justify-center items-center">
+                  <ul id="profile-page-studyPreferences" class="flex flex-col gap-x-3 gap-y-3 mb-5 max-w-[13rem] justify-center">
+                  </ul>
+               </div>
             </div>
-         </div>
-         <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 18 18">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                     d="M9 1v16M1 9h16" />
+         </section>
+         <!-- Profile Page -->
+
+         <section id="messages" class="hidden-section">
+            <h1>check your messages</h1>
+         </section>
+
+         <section id="connections" class="hidden-section">
+            <h1>check your connections</h1>
+         </section>
+
+         <!-- Settings -->
+         <section class="font-roboto hidden-section max-w-[50rem]" id="settings">
+            <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Settings</h1>
+            <div class="">
+               <div class="flex flex-col gap-y-12 md:flex-row">
+                  <a href="#personalInfo" class="font-roboto max-w-[20rem] m-auto px-6">
+                     <svg class="mb-4" width="27" height="27" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28 0C29.0544 0 29.9182 0.815878 29.9945 1.85074L30 2V20C30 21.0544 29.1841 21.9182 28.1493 21.9945L28 22H2C0.945638 22 0.0818349 21.1841 0.00548577 20.1493L0 20V2C0 0.945638 0.815878 0.0818347 1.85074 0.00548553L2 0H28ZM28 2H2V20H28V2ZM25 14V16H17V14H25ZM9 6C10.6569 6 12 7.34315 12 9C12 9.61679 11.8139 10.1901 11.4947 10.6668C12.9919 11.5293 14 13.1469 14 15H12C12 13.6941 11.1656 12.5831 10.0009 12.171L10 9C10 8.44772 9.55228 8 9 8C8.48716 8 8.06449 8.38604 8.00673 8.88338L8 9L8.00009 12.1707C6.83485 12.5825 6 13.6937 6 15H4C4 13.1469 5.00806 11.5293 6.50571 10.6656C6.18613 10.1901 6 9.61679 6 9C6 7.34315 7.34315 6 9 6ZM25 10V12H17V10H25ZM25 6V8H17V6H25Z" fill="#222222"/>
+                     </svg>
+                     <h2 class="font-semibold text-home-text/90">Personal Info</h2>
+                     <p class="text-[#717171]">
+                        Provide personal details and how we can reach you
+                     </p>
+                  </a>
+                  <a href="#loginSecurity" class="font-roboto max-w-[20rem] m-auto px-6">
+                     <svg class="mb-4" width="25" height="25" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 0.798096L13.555 1.1681C17.398 3.7301 21.208 5.0001 25 5.0001H26V17.5001C26 25.5741 20.21 31.0001 13 31.0001C5.79 31.0001 0 25.5741 0 17.5001V5.0001H1C4.792 5.0001 8.602 3.7301 12.445 1.1681L13 0.798096ZM12 3.8031C8.8 5.6691 5.582 6.7231 2.352 6.9521L2 6.9721V17.5001C2 24.0581 6.347 28.4911 12 28.9591V3.8031ZM14 3.8031V28.9601C19.654 28.4921 24 24.0591 24 17.5011V6.9721L23.648 6.9521C20.418 6.7221 17.2 5.6701 14.001 3.8041L14 3.8031Z" fill="#222222"/>
+                     </svg>
+                     <h2 class="font-semibold text-home-text/90">Login & Security</h2>
+                     <p class="text-[#717171]">
+                        Update your password and secure your account
+                     </p>
+                  </a>
+               </div>
+            </div>
+         </section>
+         
+         <!--Personal Info-->
+         <section id="personalInfo" class="font-roboto  hidden-section scroll-mt-24">
+            <div class="flex items-center gap-x-4 mb-4">
+               <a href="#settings" class="hover:underline text-sm font-semibold text-[#484848]/90">Settings</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
                </svg>
-            </p>
-         </div>
-         <div class="grid grid-cols-2 gap-4 mb-4">
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+               <p class="hover:underline cursor-pointer text-sm font-semibold text-[#484848]/90">Personal Info</p>
             </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+            <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Personal Info</h1>
+
+            <div class="flex flex-col gap-y-5 max-w-[50rem]">
+               <div class="flex justify-between border-b pb-8">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">First Name</p>
+                     <p id="personalInfo-firstName" class="text-gray-500/70"></p>
+                  </div>
+                  <a href="#editFirstname" class="text-home-text/90 underline font-medium">Edit</a>
+               </div>
+               <div class="flex justify-between border-b pb-8">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">Last Name</p>
+                     <p id="personalInfo-lastName" class="text-gray-500/70"></p>
+                  </div>
+                  <a href="#editLastName" class="text-home-text/90 underline font-medium">Edit</a>
+               </div>
+               <div class="flex justify-between border-b pb-8">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">Course</p>
+                     <p id="personalInfo-course" class="text-gray-500/70"></p>
+                  </div>
+                  <a href="#editCourse" class="text-home-text/90 underline font-medium">Edit</a>
+               </div>
+               <div class="flex justify-between border-b pb-8">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">Year Level</p>
+                     <p id="personalInfo-yearLevel" class="text-gray-500/70"></p>
+                  </div>
+                  <a href="#editYearLevel" class="text-home-text/90 underline font-medium">Edit</a>
+               </div>
+               <div class="flex justify-between border-b pb-8">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">Gender</p>
+                     <p id="personalInfo-gender" class="text-gray-500/70"></p>
+                  </div>
+                  <a href="#editGender" class="text-home-text/90 underline font-medium">Edit</a>
+               </div>
             </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
+         </section>
+
+            <!--Edit First Name-->
+            <section id="editFirstname" class="font-roboto  hidden-section">
+               <div class="flex items-center gap-x-4 mb-4">
+                  <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
                   </svg>
-               </p>
-            </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
+                  <a href="#personalInfo" id="personal-info-breadcrumb" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Personal Info</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
                   </svg>
-               </p>
-            </div>
-         </div>
-         <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <p class="text-2xl text-gray-400 dark:text-gray-500">
-               <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 18 18">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                     d="M9 1v16M1 9h16" />
+                  <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Edit First name</p>
+               </div>
+               <h1 class="font-bold text-2xl text-home-text/90 mb-[3rem]">Edit First Name</h1>
+
+               <div class="flex flex-col gap-y-5 max-w-[50rem]">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide mb-3">First Name</p>
+                     <input id="input-edit-firstName" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none mb-6" >
+                     <div class="">
+                        <a href="#personalInfo" id="btn-cancel-firstName" class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-3000">Cancel</a>
+                        <a id="btn-save-firstName" class="cursor-pointer px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!--Edit First Name-->
+
+             <!--Edit Last Name-->
+             <section id="editLastName" class="font-roboto  hidden-section">
+               <div class="flex items-center gap-x-4 mb-4">
+                  <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+                  </svg>
+                  <a href="#personalInfo" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Personal Info</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+                  </svg>
+                  <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Edit Last Name</p>
+
+               </div>
+               <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Edit Last Name</h1>
+
+               <div class="flex flex-col gap-y-5 max-w-[50rem]">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide mb-3">Last Name</p>
+                     <input id="input-edit-lastName" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none mb-6" >
+                     <div class="">
+                        <a id="btn-cancel-lastName" href="#personalInfo" class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-3000">Cancel</a>
+                        <a id="btn-save-lastName" class="cursor-pointer px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!--Edit Last Name-->
+
+            <!--Edit Course-->
+            <section id="editCourse" class="font-roboto  hidden-section">
+               <div class="flex items-center gap-x-4 mb-4">
+                  <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+                  </svg>
+                  <a href="#personalInfo" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Personal Info</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+                  </svg>
+                  <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Edit Course</p>
+
+               </div>
+               <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Edit Course</h1>
+
+               <div class="flex flex-col gap-y-5 max-w-[50rem]">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide mb-3">Course</p>
+                     <input id="input-edit-course" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none mb-6" >
+                     <div class="">
+                        <a id="btn-cancel-course" href="#personalInfo" class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-3000">Cancel</a>
+                        <a id="btn-save-course" class="cursor-pointer px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!--Edit Course-->
+
+            <!--Edit Year Level-->
+            <section id="editYearLevel" class="font-roboto  hidden-section">
+               <div class="flex items-center gap-x-4 mb-4">
+                  <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+                  </svg>
+                  <a href="#personalInfo" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Personal Info</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+                  </svg>
+                  <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Edit Year Level</p>
+
+               </div>
+               <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Edit Year Level</h1>
+
+               <div class="flex flex-col gap-y-5 max-w-[50rem]">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide mb-3">Year Level</p>
+                     <select 
+                     id="input-edit-yearLevel" 
+                     name="year-level" 
+                     class="w-full px-4 py-2 border mb-6 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                     >
+                     <option value="" disabled>Select your year level</option> 
+                     <option value="1st">1st Year</option>
+                     <option value="2nd">2nd Year</option>
+                     <option value="3rd">3rd Year</option>
+                     <option value="4th">4th Year</option>
+                     <option value="5th">5th Year</option>
+                 </select>
+                     <div class="">
+                        <a id="btn-cancel-yearLevel" href="#personalInfo" class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-3000">Cancel</a>
+                        <a id="btn-save-yearLevel" class="cursor-pointer px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!--Edit Year Level-->
+
+            <!--Edit Gender-->
+            <section id="editGender" class="font-roboto  hidden-section">
+               <div class="flex items-center gap-x-4 mb-4">
+                  <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+                  </svg>
+                  <a href="#personalInfo" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Personal Info</a>
+                  <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+                  </svg>
+                  <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Edit Gender</p>
+
+               </div>
+               <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Edit Gender</h1>
+
+               <div class="flex flex-col gap-y-5 max-w-[50rem]">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide mb-3">Gender</p>
+                     <select 
+                     id="input-edit-gender" 
+                     name="year-level" 
+                     class="w-full px-4 py-2 border mb-6 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                     >
+                     <option value="" disabled>Select your gender</option> 
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                     <option value="non-binary">Non-binary</option>
+                     <option value="prefer not to say">Prefer Not To Say</option>
+                     </select>
+                     <div class="">
+                        <a id="btn-cancel-gender" href="#personalInfo" class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-3000">Cancel</a>
+                        <a id="btn-save-gender" class="cursor-pointer px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</a>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <!--Edit Gender-->
+
+         <!--Personal Info-->
+
+         <!--Login & Security-->
+         <section id="loginSecurity" class="font-roboto hidden-section">
+            <div class="flex items-center gap-x-4 mb-4">
+               <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
                </svg>
-            </p>
-         </div>
-         <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+               <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Login & Security</p>
             </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+            <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Login & Security</h1>
+
+            <div class="flex flex-col gap-y-5 max-w-[50rem]">
+               <div class="flex justify-between border-b pb-8">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">Password</p>
+                     <p class="text-gray-500/70">**********</p>
+                  </div>
+                  <a href="#changePassword" class="text-home-text/90 underline font-medium">Change Password</a>
+               </div>
+               <div class="flex justify-between border-b pb-8">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">Log history</p>
+                  </div>
+                  <a href="#logHistory" class="text-home-text/90 underline font-medium">See</a>
+               </div>
+               <div class="flex justify-between border-b pb-8">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">Delete Account</p>
+                  </div>
+                  <a href="#deleteAccount" class="text-home-text/90 underline font-medium">See</a>
+               </div>
+               <div class="flex justify-between border-b pb-8 items-center">
+                  <div class="">
+                     <p class="text-home-text/90 font-semibold tracking-wide">Sign out Account</p>
+                  </div>
+                  <a href="#signOutAccount" class=" text-white  tracking-wide bg-red-600 hover:bg-red-600/70 px-4 py-2 rounded-md">Sign Out</a>
+               </div>
             </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+         </section>
+
+         <!-- Change password -->
+         <section id="changePassword" class="font-roboto  hidden-section">
+            <div class="flex items-center gap-x-4 mb-4">
+               <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+               </svg>
+               <a href="#loginSecurity" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Login & Security</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+               </svg>
+               <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Change Password</p>
+
             </div>
-            <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">
-                  <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 18 18">
-                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 1v16M1 9h16" />
-                  </svg>
-               </p>
+            <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Change Password</h1>
+
+            <div class="flex flex-col gap-y-5 max-w-[50rem]">
+               <div class="">
+                  <p class="text-home-text/90 font-semibold tracking-wide mb-3">Password</p>
+                  <input id="edit-firstName" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none mb-6" >
+                  <div class="">
+                     <a href="#loginSecurity" class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-3000">Cancel</a>
+                     <a id="btn-save-lastName" class="cursor-pointer px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</a>
+                  </div>
+               </div>
             </div>
-         </div>
+         </section>
+         <!-- Change password -->
+
+         <!-- Log History -->
+         <section id="logHistory" class="hidden-section font-roboto scroll-mt-28">
+            <div class="flex items-center gap-x-4 mb-4">
+               <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+               </svg>
+               <a href="#loginSecurity" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90 text-center">Login & Security</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+               </svg>
+               <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Log History</p>
+
+            </div>
+            <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Log History</h1>
+
+            <ul id="container-log-history" class="flex flex-col gap-y-5">
+            </ul>
+         </section>
+          
+         <!-- Log History -->
+
+
+         <!-- Delete Account -->
+         <section id="deleteAccount" class="font-roboto  hidden-section">
+            <div class="flex items-center gap-x-4 mb-4">
+               <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+               </svg>
+               <a href="#loginSecurity" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Login & Security</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+               </svg>
+               <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Delete Account</p>
+            </div>
+            <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Delete Account</h1>
+
+            <div class="flex flex-col gap-y-5 max-w-[50rem]">
+               <div class="">
+                  <p class="text-home-text/90 font-semibold tracking-wide mb-3">Are you sure you want to deactivate your account? This action is permanent.</p>
+                  <div class="">
+                     <a href="#loginSecurity" class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-3000">Cancel</a>
+                     <a id="" class="cursor-pointer px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Delete</a>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+
+         <!-- Signout Account -->
+         <section id="signOutAccount" class="font-roboto  hidden-section">
+            <div class="flex items-center gap-x-4 mb-4">
+               <a href="#settings" class="hover:underline font-semibold text-sm text-[#484848]/90">Settings</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+               </svg>
+               <a href="#loginSecurity" class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Login & Security</a>
+               <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.820847 0.949976C0.769413 0.898177 0.728685 0.836754 0.700988 0.769215C0.673292 0.701676 0.659169 0.629342 0.659427 0.556345C0.659685 0.483348 0.674319 0.411116 0.702492 0.343775C0.730665 0.276433 0.771826 0.215299 0.823625 0.163865C0.875424 0.112431 0.936847 0.0717024 1.00439 0.0440059C1.07193 0.0163094 1.14426 0.00218694 1.21726 0.00244488C1.29025 0.00270282 1.36248 0.0173361 1.42983 0.0455092C1.49717 0.0736823 1.5583 0.114844 1.60974 0.166643L6.05418 4.61109C6.15765 4.71518 6.21573 4.85598 6.21573 5.00275C6.21573 5.14952 6.15765 5.29033 6.05418 5.39442L1.60974 9.83886C1.5583 9.89066 1.49717 9.93182 1.42983 9.96C1.36248 9.98817 1.29025 10.0028 1.21726 10.0031C1.14426 10.0033 1.07193 9.9892 1.00439 9.9615C0.936847 9.93381 0.875424 9.89308 0.823625 9.84164C0.771826 9.79021 0.730665 9.72908 0.702492 9.66173C0.674319 9.59439 0.659685 9.52216 0.659427 9.44916C0.659169 9.37617 0.673292 9.30383 0.700988 9.23629C0.728685 9.16875 0.769413 9.10733 0.820847 9.05553L4.87085 5.00553L0.820847 0.949976Z" fill="#767676"/>
+               </svg>
+               <p class="hover:underline cursor-pointer font-semibold text-sm text-[#484848]/90">Sign Out Account</p>
+
+            </div>
+            <h1 class="font-bold text-3xl text-home-text/90 mb-[3rem]">Signout Account</h1>
+
+            <div class="flex flex-col gap-y-5 max-w-[50rem]">
+               <div class="">
+                  <p class="text-home-text/90 font-semibold tracking-wide mb-3">Are you sure you want to sign out your account?</p>
+                  <div class="">
+                     <a href="#loginSecurity" class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-3000">Cancel</a>
+                     <a id="btn-signOut-settings" class="cursor-pointer px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-600/70">Yes</a>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Signout Account -->
+
+
+         <!--Login & Security-->
       </div>
    </div>
+
    <script src="../js/profile-page.js" type="module"></script>
 </body>
 

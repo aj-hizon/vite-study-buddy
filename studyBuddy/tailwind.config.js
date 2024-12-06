@@ -16,12 +16,16 @@ export default {
         'text-blue': '#121481',
         'text-secondary-blue': '#33658A',
         'button-blue': '#555296',
+        'home-text': '#222222',
       },
       screens: {
-        'sm': '400px',
+        'sm': '940px',
       },
       backgroundImage: {
         'hero': 'url(./public/2imgLandingPage/section1-bg.png)',
+      },
+      fontFamily: {
+        'roboto': ["Roboto", "sans-serif"],
       }
     },
   },

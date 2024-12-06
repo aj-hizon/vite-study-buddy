@@ -1,3 +1,4 @@
+import { arrayUnion } from "firebase/firestore";
 import {
   db,
   auth,
@@ -5,6 +6,7 @@ import {
   setDoc,
   doc,
 } from "../../config/firebase";
+import { dateFormat } from "../../scripts/app";
 
 let currentQuestion = 1;
 let responses = []; // Array to store answers
@@ -12,7 +14,7 @@ let quizCompleted = false; // Track if the quiz is completed
 
 const questions = [
   {
-    question: "Study preferences",
+    question: "Collaboration Style",
     options: ["Pair", "Group", "Alone", "Mixed"],
   },
   {
@@ -156,15 +158,39 @@ function updateSubmitButton() {
     // Redirect to splash screen
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const userData = {
-          studyPreference: responses[0].toLowerCase(),
-          studySchedule: responses[1].toLowerCase(),
-          studyStyle: responses[2].toLowerCase(),
-          studyPace: responses[3].toLowerCase(),
-          studyTools: responses[4].toLowerCase(),
-          donePersonalizedQuiz: true,
+        const logAction = {
+          action: "edit",
+          date: dateFormat(new Date()),
+          description: "Edited Personal Preferences"
         };
 
+        const userData = {
+          userPreference: [
+            {
+              question: "Collaboration Style",
+              answer: responses[0].toLowerCase(),
+            }, 
+            {
+              question: "Study Schedule",
+              answer: responses[1].toLowerCase(),
+            }, 
+            {
+              question: "Study Style",
+              answer: responses[2].toLowerCase(),
+            },
+            {
+              question: "Study Pace",
+              answer: responses[3].toLowerCase(),
+            },
+            {
+              question: "Study Tools",
+              answer : responses[4].toLowerCase(),
+            }
+          ],
+          donePersonalizedQuiz: true,
+          logHistory: arrayUnion(logAction)
+        };
+        
         async function addDataAndRedirect(){
             try {
                 const docRef = doc(db, 'users', user.uid);
